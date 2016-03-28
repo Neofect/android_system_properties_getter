@@ -1,5 +1,6 @@
 package com.neofect.app.system_properties_getter;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
@@ -60,8 +61,20 @@ public class MainActivity extends AppCompatActivity {
 			return;
 		}
 
+		// Show Build.MANUFACTURER, Build.MODEL
+		fillBuildData();
+
 		// Update the console
 		filterProperties(null);
+	}
+
+	private void fillBuildData() {
+		String data = "";
+		data += "[Build.MANUFACTURER]: [" + Build.MANUFACTURER + "]\n";
+		data += "[Build.MODEL]: [" + Build.MODEL + "]";
+
+		TextView buildData = (TextView) findViewById(R.id.editTextBuildData);
+		buildData.setText(data);
 	}
 
 	private void filterProperties(String keyword) {
