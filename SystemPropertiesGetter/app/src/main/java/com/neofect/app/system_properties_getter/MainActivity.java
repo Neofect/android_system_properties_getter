@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
 	private void filterProperties(String keyword) {
 		String content = "";
 		for (String line : properties) {
-			if (keyword != null && line.indexOf(keyword) < 0) {
+			if (keyword != null && line.toLowerCase().indexOf(keyword.toLowerCase()) < 0) {
 				continue;
 			}
 			if (!content.equals("")) {
