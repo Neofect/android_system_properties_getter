@@ -71,7 +71,8 @@ public class MainActivity extends AppCompatActivity {
 	private void fillBuildData() {
 		String data = "";
 		data += "[Build.MANUFACTURER]: [" + Build.MANUFACTURER + "]\n";
-		data += "[Build.MODEL]: [" + Build.MODEL + "]";
+		data += "[Build.MODEL]: [" + Build.MODEL + "]\n";
+		data += "[Build.SERIAL]: [" + Build.SERIAL + "]";
 
 		TextView buildData = (TextView) findViewById(R.id.editTextBuildData);
 		buildData.setText(data);
